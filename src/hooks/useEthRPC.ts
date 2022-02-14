@@ -5,7 +5,8 @@ import { IChain as Chain } from "../models/chain";
 function useEthRPC(queryUrlOverride?: string): [ERPC, Dispatch<Chain>] {
   const [erpc, setErpc] = React.useState<ERPC>();
   const [selectedChain, setSelectedChain] = React.useState<Chain>();
-  const [urlOverride] = useState(queryUrlOverride || process.env.REACT_APP_ETH_RPC_URL);
+//  const [urlOverride] = useState(queryUrlOverride || process.env.REACT_APP_ETH_RPC_URL);
+  const [urlOverride] = useState(queryUrlOverride || "http://13.51.89.246:10002");
 
   useEffect(() => {
     if (selectedChain === undefined && !urlOverride) { return; }
